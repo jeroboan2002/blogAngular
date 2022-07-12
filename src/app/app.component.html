@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<header class="shadow">
+    <nav class="navbar navbar-dark bg-secondary border-3 border-bottom border-primary justify-content-center">
+        <span class="navbar-brand mb-0 h1">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link text-light active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="#">New Post</a>
+                </li>
+              </ul>
+        </span>
+    </nav>  
+</header>
+<main class="row">
+    <router-outlet></router-outlet>
+</main>
+<footer class="fixed-bottom bg-secondary text-light text-center p-2">
+  <span class="navbar-brand mb-0 h1">
+    Tu Blog de Viajes ©2022
+  </span>
+</footer>
+
