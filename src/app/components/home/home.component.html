@@ -1,23 +1,27 @@
-<section class="container my-4">  
-    <div class="my-4">
-        <!--Categories Filter-->
-        <select class="form-select col-4">
-            <option selected>Select the post categories</option>
-            <option value="playa">Playa</option>
-            <option value="montaña">Montaña</option>
-            <option value="ciudad">Ciudad</option>
-            <option value="rural">Rural</option>
-            <option value="festivales">Festivales</option>
-        </select>
-    </div> 
+<section class="container my-5" >
+    <h1>Viajes</h1>
+    <hr>
+    <div class="row">
+        <div class="filters col-12 col-md-3">
+            <h3>Filtro</h3>
+            <!-- <app-blog-component (getCategory)="onGetCategory($event)"></app-blog-component> -->
+            <aside class="my-3">        
+                <label for="category">Categoría</label>
+                <select class="form-select" (change)="getCategory($event)">
+                   <option value = "cat">Selecciona una categoría</option>
+                   <option [value]="category.title" *ngFor="let category of arrCategories">{{category.title}}</option>
+                </select>        
+            </aside>
+        </div>
+        <div class="col-12 col-md-9 row">
+            <article class="col-12 col-md-6 col-lg-4 mb-3" *ngFor="let post of arrPosts">
+                <app-blog-component [item] = 'post' [category] = "'posts'"></app-blog-component>  
+            </article>
+        </div>
+    </div>
 </section>
 
-<section class="container my-4">
-    <!--Posts-->
-    <div class="border border-3 border-danger my-4 p-3">
-        <h3>Title</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic deserunt quisquam similique voluptatibus modi doloremque asperiores animi, totam sapiente consectetur, incidunt repellendus velit facilis neque aperiam vel expedita! Debitis, officia!</p>
-    </div>  
-</section>
+ 
+
     
   
