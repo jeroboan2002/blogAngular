@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'blogAngular';
+  style1: string = "http://localhost:4200"
+  style2: string = "http://localhost:4200/new"
+  
+  
+  
 }

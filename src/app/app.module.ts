@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { BlogComponentComponent } from './components/blog-component/blog-component.component';
+import { FormularioComponentComponent } from './components/formulario-component/formulario-component.component';
+import { ViewPostComponent } from './components/view-post/view-post.component';
 
 
 
@@ -11,7 +14,10 @@ import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    BlogComponentComponent,
+    FormularioComponentComponent,
+    ViewPostComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<div class="card">
+    <div class="imagen" [ngStyle]="{'background-image': 'url('+ post.image +')'}"></div>
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.text.substr(0,50)}}...</p>
+      <a [routerLink]="['post/:idpost', post.id]" class="btn btn-warning">Ver detalle</a>
+    </div>
+</div>   
+
