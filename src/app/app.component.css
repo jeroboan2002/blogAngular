@@ -1,4 +1,7 @@
-a:hover{
-    color:blue !important; 
+.navbar-brand{
+    color: #0d6efd;
 }
 
+.worldImage{
+    background-image: url(https://images.pexels.com/photos/269724/pexels-photo-269724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=100&dpr=1);
+}
