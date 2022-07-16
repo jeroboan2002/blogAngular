@@ -12,7 +12,6 @@ import { Post } from 'src/app/interfaces/post';
 })
 export class BlogComponentComponent implements OnInit {
   @Input() item: any
-  @Input() category: string = ''
   post: Post | any
 
 
@@ -20,15 +19,7 @@ export class BlogComponentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.category === 'posts'){
-      this.post = this.item;
-    }else{
-      this.post = this.item;
-    }
+    this.post = this.item
   }
-
-  
-
-  
   
 }
