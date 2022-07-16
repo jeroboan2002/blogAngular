@@ -14,8 +14,7 @@ import { PostsService } from 'src/app/services/posts.service';
 export class HomeComponent implements OnInit {
   arrPosts: Post[] = [];
   arrCategories: Category[] = [];
-  categoria: string = 'Todos los Posts'
-
+  
 
   constructor(
     private postsService: PostsService,
@@ -25,12 +24,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.arrPosts = this.postsService.getAllPost();
     this.arrCategories = this.categoriesService.getAllCategories();
-    
   }
 
   getCategory($event: any){
     if($event !==''){
-      this.arrPosts = this.postsService.getPostsByCategoria($event.target.value);  
+      this.arrPosts = this.postsService.getPostsByCategoria($event.target.value); 
+       
     }else{
       this.arrPosts = this.postsService.getAllPost()
     }
@@ -39,4 +38,8 @@ export class HomeComponent implements OnInit {
       this.arrPosts = this.postsService.getAllPost()
     }
   }  
+
+ 
+  
+
 }
