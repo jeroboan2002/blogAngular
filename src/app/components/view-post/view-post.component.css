@@ -1,0 +1,10 @@
+.card{
+    width: 100%;
+}
+
+.imagen{
+    height: 750px;
+    background-size: cover;
+    background-position: bottom center;
+    margin-top: 10px;
+}

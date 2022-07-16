@@ -1,1 +1,51 @@
-<p>formulario-component works!</p>
+<section class="container mt-3">
+    <form novalidate [formGroup]="formulario" (ngSubmit)="getDataForm(formulario)">
+        <div>
+            <label for="author" class="form-label">Autor</label>
+            <input type="text" id="author" class="form-control" placeholder="Introduce el nombre del autor" formControlName="author">
+
+            <p class="error" *ngIf="checkControl('author','required')">Campo es requirido</p>
+
+            <p class="error" *ngIf="checkControl('author', 'minlength')"> Campo tiene longitud minima de tres caracteres</p>
+        </div>
+        <div>
+            <label for="image" class="form-label">Foto</label>
+            <input type="text" id="image" class="form-control" placeholder="Introduce una dirección de imagen" formControlName="image">
+
+            <p class="error" *ngIf="checkControl('image','required')">Campo es requirido</p>
+
+            <p class="error" *ngIf="checkControl('image','pattern')">Introduce una dirección válida</p>
+        </div>
+        <div>
+            <label for="date" class="form-label">Fecha</label>
+            <input type="date" id="date" class="form-control" formControlName="date">
+
+            <p class="error" *ngIf="checkControl('date','required')">Campo es requirido</p>
+
+        </div>
+        <div>
+            <select formControlName="category" class="form-select mt-3" >
+                <option value="" >Selecciona una categoría</option>
+                <option [value]="category.title" *ngFor="let category of arrCategorias">{{category.title}}</option>
+            </select>
+
+            <p class="error" *ngIf="checkControl('category','required')">Campo es requirido</p>
+        </div>
+        <div>
+            <label for="title" class="form-label">Título</label>
+            <input type="text" id="title" class="form-control" placeholder="Introduce título del artículo" formControlName="title">
+
+            <p class="error" *ngIf="checkControl('title','required')">Campo es requirido</p>
+
+            <p class="error" *ngIf="checkControl('title', 'minlength')"> Campo tiene longitud minima de tres caracteres</p>
+        </div>
+        <div>
+            <label for="text" class="form-label">Texto</label>
+            <textarea class="form-control" id="text" rows="auto" name="text"></textarea>
+
+            <p class="error" *ngIf="checkControl('title','required')">Campo es requirido</p>
+        </div>
+    
+        <input type="submit" class="btn btn-primary my-3" value="Guardar">
+    </form>
+</section>

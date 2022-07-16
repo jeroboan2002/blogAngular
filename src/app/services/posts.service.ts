@@ -25,9 +25,14 @@ export class PostsService {
     const newPost: Post = {
       id: this.id, ...pForm
     }
+    this.arrPosts.push(newPost)
   } 
 
   getPostsByCategoria(pCategory: string): Post[]{
     return this.arrPosts.filter(Post => Post.category === pCategory)
+  }
+
+  getById(id: number): Post | any {
+    return this.arrPosts.find(post => post.id === id)
   }
 }
