@@ -8,7 +8,7 @@
                 <select class="form-select" (change)="getCategory($event)">
                    <option value = "cat">Selecciona una categoría</option>
                    <option [value]="category.title" *ngFor="let category of arrCategories">{{category.title}}</option>
-                </select>        
+                </select>    
             </aside>
         </div>
         <div class="col-12 col-md-9 row">
