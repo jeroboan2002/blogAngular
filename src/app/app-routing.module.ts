@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: "/home"},
   {path: 'home', component: HomeComponent, children: [
     {path: '', component: HomeComponent},
-    {path: 'category/:categoryTitle', component: HomeComponent},
+    {path: ':category/:categoryTitle', component: HomeComponent},
   ]
   },
   {path: 'new', component: FormularioComponentComponent},
