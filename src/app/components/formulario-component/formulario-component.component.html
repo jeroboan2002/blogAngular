@@ -24,7 +24,7 @@
 
         </div>
         <div>
-            <select formControlName="category" class="form-select mt-3" >
+            <select class="form-select mt-3" formControlName="category">
                 <option value="" >Selecciona una categoría</option>
                 <option [value]="category.title" *ngFor="let category of arrCategorias">{{category.title}}</option>
             </select>
@@ -41,11 +41,17 @@
         </div>
         <div>
             <label for="text" class="form-label">Texto</label>
-            <textarea class="form-control" id="text" rows="auto" name="text"></textarea>
+            <textarea class="form-control" id="text" rows="auto" formControlName="text" placeholder="Escribe el texto"></textarea>
 
-            <p class="error" *ngIf="checkControl('title','required')">Campo es requirido</p>
+            <p class="error" *ngIf="checkControl('text','required')">Campo es requirido</p>
+
+            <p class="error" *ngIf="checkControl('text', 'minlength')"> Campo tiene longitud minima de cien caracteres</p>
         </div>
     
-        <input type="submit" class="btn btn-primary my-3" value="Guardar">
+        
+        <input type="submit" class="btn btn-primary my-3" value="Guardar" [disabled]="!formulario.valid">
+            
+        
     </form>
+    
 </section>
