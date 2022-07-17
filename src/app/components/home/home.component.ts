@@ -14,7 +14,6 @@ import { PostsService } from 'src/app/services/posts.service';
 export class HomeComponent implements OnInit {
   arrPosts: Post[] = [];
   arrCategories: Category[] = [];
-  
 
   constructor(
     private postsService: PostsService,
@@ -27,19 +26,12 @@ export class HomeComponent implements OnInit {
   }
 
   getCategory($event: any){
-    if($event !==''){
+    if($event !=='' && $event.target.value !== 'cat'){
       this.arrPosts = this.postsService.getPostsByCategoria($event.target.value); 
        
     }else{
       this.arrPosts = this.postsService.getAllPost()
     }
-    
-    if($event.target.value === 'cat'){
-      this.arrPosts = this.postsService.getAllPost()
-    }
   }  
-
- 
-  
 
 }
